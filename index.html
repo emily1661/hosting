@@ -19,6 +19,9 @@
             color: white;
             text-align: center;
             padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         img {
@@ -29,6 +32,10 @@
 
         section {
             margin: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         h2 {
@@ -43,55 +50,241 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        #contacto,
+        #identificadoresAcademicos,
+        #experienciaCertificados,
+        #investigadoresUTEQ,
+        #perfilInvestigador {
+            display: none;
+        }
+
+        #imagen-container {
+            max-width: 200px;
+            margin-right: 20px;
+        }
+
+        #email img,
+        #telefono img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+
+        /* Estilos para la tabla de investigadores UTEQ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
     <header>
         <!-- Agregué una imagen de ejemplo, debes reemplazar "ruta_completa_de_tu_foto.jpg" -->
-        <C:\Users\USER-EMILY\Desktop\Snapchat-1804905957.jpg" alt="Foto de Emily Tamara Miranda Briones">
-        <h1>Emily Tamara Miranda Briones</h1>
-        <p>Ingeniera en Telemática</p>
+        <div>
+            <img src="C:\Users\USER-EMILY\Desktop\Snapchat-1804905957.jpg" alt="Foto de Emily Tamara Miranda Briones">
+            <h1>Emily Tamara Miranda Briones</h1>
+            <p>Ingeniera en Telemática</p>
+        </div>
     </header>
-    
-    <section>
+
+    <!-- Botones para cargar información -->
+    <div class="btn-container">
+        <button onclick="cargarContacto()" class="btn">Información de Contacto</button>
+        <button onclick="cargarExperienciaCertificados()" class="btn">Experiencia y Certificados</button>
+        <button onclick="cargarPerfilInvestigador()" class="btn">Perfil del Investigador</button>
+        <button onclick="cargarInvestigadoresUTEQ()" class="btn">Investigadores UTEQ</button>
+    </div>
+
+    <section id="contacto">
         <h2>Información de Contacto</h2>
-        <p>Email: <a href="mailto:emirandab@uteq.edu.ec">emirandab@uteq.edu.ec</a></p>
-        <p>Teléfono: 0985113862</p>
-    </section>
-    
-    <section>
-        <h2>Educación</h2>
-        <p>Universidad Técnica Estatal de Quevedo</p>
-        <p>Tercer Nivel - Ingeniería en Telemática</p>
-        <p>Año de Graduación: 2024</p>
-    </section>
-
-    <section>
-        <h2>Identificadores Académicos</h2>
-        <p>Scopus ID: 123456789</p>
-        <p>ResearchGate: emilytamara</p>
-        <p>Google Scholar: emily.tamara@gmail.com</p>
-        <p>Web of Science: WOS123456</p>
-        <p>ORCID: <a href="https://orcid.org/0009-0002-5084-3076" target="_blank">https://orcid.org/0009-0002-5084-3076</a></p>
-    </section>
-    
-    <section>
-        <h2>Experiencia Laboral</h2>
-        <p>Prácticas Profesionales - Universidad Técnica Estatal de Quevedo "Campus La María"</p>
-        <p>Área de TIC's</p>
-        <p>Duración: 480 horas</p>
-    </section>
-    
-    <section>
-        <h2>Certificados</h2>
-        <p>CCNAv7: Introduction to Networks</p>
-        <p>Partner: PCAP - Programming Essentials in Python</p>
+        <div id="apellidos">
+            <p>Apellidos: Miranda Briones</p>
+        </div>
+        <div id="cedula">
+            <p>Cédula de Identidad: 050409711-4</p>
+        </div>
+        <div id="fechaNacimiento">
+            <p>Fecha de Nacimiento: Junio 1 del 2000</p>
+        </div>
+        <div id="lugarNacimiento">
+            <p>Lugar de Nacimiento: Valencia, El Vergel</p>
+        </div>
+        <div id="nacionalidad">
+            <p>Nacionalidad: Ecuatoriana</p>
+        </div>
+        <div id="estadoCivil">
+            <p>Estado Civil: Soltero</p>
+        </div>
+        <div id="direccion">
+            <p>Dirección Domiciliaria: El Vergel</p>
+        </div>
+        <div id="telefonosCelular">
+            <p>Teléfonos Celular: 0985113862</p>
+        </div>
+        <div id="correoElectronico">
+            <p>Correo Electrónico: <a href="mailto:emirandab@uteq.edu.ec">emirandab@uteq.edu.ec</a></p>
+        </div>
+        <button onclick="regresarAlInicio()" class="btn" style="margin-top: 20px;">Regresar al Inicio</button>
     </section>
 
-    <section>
-        <h2>Investigadores UTEQ y Revistas 2023</h2>
-        <p>Estadísticas de 5 investigadores de la UTEQ y listado de revistas del 2023:</p>
-        <!-- Agrega aquí la información de las estadísticas e investigadores -->
-    </section>
+    <section id="experienciaCertificados"></section>
+    <section id="investigadoresUTEQ"></section>
+    <section id="perfilInvestigador"></section>
+
+    <script>
+        function cargarContacto() {
+            document.getElementById('contacto').style.display = 'block';
+            document.getElementById('experienciaCertificados').style.display = 'none';
+            document.getElementById('investigadoresUTEQ').style.display = 'none';
+            document.getElementById('perfilInvestigador').style.display = 'none';
+        }
+
+        function cargarExperienciaCertificados() {
+            document.getElementById('experienciaCertificados').innerHTML = `
+                <h2>Experiencia Laboral</h2>
+                <p>Prácticas Profesionales - Universidad Técnica Estatal de Quevedo "Campus La María"</p>
+                <p>Área de TIC's</p>
+                <p>Duración: 480 horas</p>
+
+                <h2>Certificados</h2>
+                <p>CCNAv7: Introduction to Networks</p>
+                <p>Partner: PCAP - Programming Essentials in Python</p>
+
+                <button onclick="regresarAlInicio()" class="btn" style="margin-top: 20px;">Regresar al Inicio</button>
+            `;
+            ocultarSeccionesExcepto('experienciaCertificados');
+        }
+
+        function cargarInvestigadoresUTEQ() {
+            document.getElementById('investigadoresUTEQ').innerHTML = `
+                <h2>Investigadores UTEQ</h2>
+                <table>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>ORCID</th>
+                        <th>ARTICULOS PUBLICADOS</th>
+                        <th>ARTICULO CON MAS CITAS</th>
+                        <th>H INDEX</th>
+                        <th>Tendencias de documentos y citas</th>
+                    </tr>
+                    <tr>
+                        <td>Byron Oviedo Bayas</td>
+                        <td><a href="https://orcid.org/0000-0002-5366-5917" target="_blank">https://orcid.org/0000-0002-5366-5917</a></td>
+                        <td>46</td>
+                        <td>257 citas por documentos</td>
+                        <td>4</td>
+                        <td>2022 tuvo 53 citas y 6 documentos</td>
+                    </tr>
+                    <tr>
+                        <td>SAMANIEGO MENA EDUARDO AMABLE</td>
+                        <td><a href="https://orcid.org/0000-0002-6196-2014" target="_blank">https://orcid.org/0000-0002-6196-2014</a></td>
+                        <td>5</td>
+                        <td>6 citas por documentos</td>
+                        <td>2</td>
+                        <td>2021 tuvo 3 citas y 0 documentos</td>
+                    </tr>
+                    <tr>
+                        <td>EMILIO RODRIGO ZHUMA MERA</td>
+                        <td><a href="https://orcid.org/0000-0002-3086-1413" target="_blank">https://orcid.org/0000-0002-3086-1413</a></td>
+                        <td>6</td>
+                        <td>183 citas por documentos</td>
+                        <td>1</td>
+                        <td>2020 tuvo 33 citas y 1 documentos</td>
+                    </tr>
+                    <tr>
+                        <td>ZAMBRANO VEGA CRISTIAN GABRIEL</td>
+                        <td><a href="https://orcid.org/0000-0001-8568-8024" target="_blank">https://orcid.org/0000-0001-8568-8024</a></td>
+                        <td>22</td>
+                        <td>50 citas por documentos</td>
+                        <td>5</td>
+                        <td>2022 tuvo 14 citas y 3 documentos</td>
+                    </tr>
+                    <tr>
+                        <td>TORRES QUIJIJE ANGEL IVAN</td>
+                        <td><a href="https://orcid.org/0000-0002-7037-7191" target="_blank">https://orcid.org/0000-0002-7037-7191</a></td>
+                        <td>5</td>
+                        <td>2 citas por documentos</td>
+                        <td>4</td>
+                        <td>2021 tuvo 1 citas y 2 documentos</td>
+                    </tr>
+                </table>
+
+                <button onclick="regresarAlInicio()" class="btn" style="margin-top: 20px;">Regresar al Inicio</button>
+            `;
+            ocultarSeccionesExcepto('investigadoresUTEQ');
+        }
+
+        function cargarPerfilInvestigador() {
+            document.getElementById('perfilInvestigador').innerHTML = `
+                <h2>Identificadores Académicos</h2>
+                <p>Scopus ID: Emily Miranda Briones</p>
+                <p>ResearchGate: EmilyMiranda</p>
+                <p>Google Scholar: emirandab@uteq.edu.ec</p>
+                <p>Web of Science: JXM-9570-2024</p>
+                <p>ORCID: <a href="https://orcid.org/0009-0002-5084-3076" target="_blank">https://orcid.org/0009-0002-5084-3076</a></p>
+           <h2>Pirámides de Indexación de Revistas Científicas</h2>
+          <div id="piramide">
+          <img src="C:\Users\USER-EMILY\Desktop\piramide.png" alt="Pirámides de Indexación">
+          </div>
+      <h2>Enlaces de Listas de Revistas</h2>
+    <p>Scopus Última Actualización: <a href="https://www.elsevier.com/products/scopus/content#4-titles-on-scopus" target="_blank">https://www.elsevier.com/products/scopus/content#4-titles-on-scopus</a></p>
+    <p>JRC Última Actualización: <a href="https://mjl.clarivate.com/collection-list-downloads" target="_blank">https://mjl.clarivate.com/collection-list-downloads</a></p>
+
+
+                <button onclick="regresarAlInicio()" class="btn" style="margin-top: 20px;">Regresar al Inicio</button>
+            `;
+            ocultarSeccionesExcepto('perfilInvestigador');
+        }
+
+        function regresarAlInicio() {
+            ocultarSeccionesExcepto('contacto');
+        }
+
+        function ocultarSeccionesExcepto(seccionMostrar) {
+            var secciones = ['contacto', 'experienciaCertificados', 'investigadoresUTEQ', 'perfilInvestigador'];
+            secciones.forEach(function(seccion) {
+                document.getElementById(seccion).style.display = (seccion === seccionMostrar) ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
+
